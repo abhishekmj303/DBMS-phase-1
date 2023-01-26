@@ -1,9 +1,31 @@
+/* Color Pallete */
+/* 
+#FCFCFC
+#00A3FF
+#00FFFF
+#16181F
+#1E1E26
+#6100FF
+#6E7885
+hsl(317 100% 54%)
+*/
+
 :root {
-    --clr-neon: hsl(317 100% 54%);
+    --clr-neon: #6100FF;
+    --clr-wish: #FCFCFC;
+    --card-height-1: 300px;
+    --card-height-2: 330px;
 }
 
 html,body {
     min-height: 100%;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+p {
+    margin: 0;
 }
 
 /* background */
@@ -22,50 +44,91 @@ html,body {
         #1a063b);
 }
 
+
 /* wishing */
 
 #wishing {
+    margin-top: 3.5%;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Unbounded", sans-serif;
+    font-weight: 300;
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: visible-1 1s ease forwards;
 }
 
-/* introduction */
-
-.intro-together {
-    display: flex;
-    justify-content: center;
+@keyframes visible-1 {
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
-.intro-together h1,h3 {
-    margin: 7px;
+#our-pics {
+    margin-top: 1em;
 }
 
-.intro-together h3 {
-    position: relative;
-    top: 4px;
+#meet {
+    font-size: 1.1em;
+    color: var(--clr-wish);
+    text-shadow: 
+     0 0 0.3em rgb(246, 67, 195);
+}
+
+#team{
+    font-size: 3.5em;
+    font-weight: 400;
+    color: var(--clr-wish);
+    text-shadow: 
+    0 0 0.3em rgb(246, 67, 195);
+    
+}
+
+#team::before {
+    content: "<";
+    color: var(--clr-neon);
+    text-shadow: none;
+}
+
+#team::after {
+    content: "/>";
+    color: var(--clr-neon);
+    text-shadow: none;
 }
 
 /* cards */
 
 .cards-together {
-    padding-top: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    padding-top: 1.5em;
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: visible-2 1s ease 0.6s forwards;
+}
+@keyframes visible-2 {
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 .card-image {
-    margin-top: 10px;
-    width: 90%;
-    border-radius: 7px;
+    margin-top: 6%;
+    width: 80%;
+    border-radius: 50%;
 }
 
+/* button */
+
 .info-btn {
-    border-radius: 6px;
+    border-radius:6px;
     border: 1px solid rgb(172, 172, 172);
     padding: 0.45em 2em;
-    position: relative;
-    top: 20px;
     transition: all 300ms;
     cursor: pointer;
 }
@@ -85,31 +148,38 @@ html,body {
         #0a0217, 
         #160532, 
         #1a063b);
-    width: 230px;
-    height: 300px;
+    height: var(--card-height-1);
+    width: calc(var(--card-height-1)/1.25);
     border-radius: 14px;
     margin: 20px;
     text-align: center;
     transition: all 400ms;
     position: relative;
+    cursor: pointer;
 }
 
 .separate-card:hover {
-    width: 270px;
-    height: 330px;
+    height: var(--card-height-2);
+    width: calc(var(--card-height-2)/1.25 + 5px);
     border: none;
+    margin-top: 8px;
+    margin-inline: 6px;
+    margin-bottom: 2px;
+}
+.separate-card:hover  .name-roll{
+    font-size: 22px;
 }
 
 .separate-card::before {
     position: absolute;
-    top: -2.5px;
-    left: -2.5px;
+    top: -2px;
+    left: -2px;
     content: '';
-    width: calc(100% + 5px);
-    height: calc(100% + 5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
     border-radius: 16px;
     background-image: linear-gradient(
-        var(--rotate), #5ddcff, #3c67ec 43%, #4e00c2, rgb(235, 124, 142));
+    var(--rotate), #5ddcff, #3c67ec 43%, #4e00c2, rgb(235, 124, 142));
     z-index: -1;
 }
 
@@ -122,11 +192,10 @@ html,body {
     z-index: -1;
     height: 100%;
     width: 100%;
-    /* margin: 0 auto; */
     transform: scale(0.8);
     filter: blur(55px);
     background-image: linear-gradient(
-        var(--rotate), #5ddcff, #3c67ec 43%, #4e00c2, rgb(235, 124, 142));
+    var(--rotate), #5ddcff, #3c67ec 43%, #4e00c2, rgb(235, 124, 142));
     opacity: 1;
     transition: opacity 0.5s;
 }
@@ -149,4 +218,38 @@ html,body {
     syntax: "<angle>";
     initial-value: 135deg;
     inherits: false;
+}
+
+/* name and roll no. */
+
+.name-roll {
+    margin:20% auto;
+    font-weight: 200;
+    font-size: 20px;
+    transition: font-size 400ms;
+}
+
+@media screen and (max-width: 520px){
+    #meet {
+        font-size: 1em;
+    }
+    #team{
+        font-size: 2.8em;
+    } 
+    .cards-together {
+        margin: 0;
+        padding: 0;
+    }
+}
+@media screen and (max-width: 350px){
+    #meet {
+        font-size: 0.8em;
+    }
+    #team{
+        font-size: 2em;
+    }
+    .cards-together {
+        margin: 0;
+        padding: 0;
+    } 
 }
