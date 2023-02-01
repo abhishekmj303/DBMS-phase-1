@@ -74,7 +74,8 @@ p {
     font-size: 1.1em;
     color: var(--clr-wish);
     text-shadow: 
-     0 0 0.3em rgb(246, 67, 195);
+     0 0 0.3em rgb(246, 67, 195),
+     0 0 0.05em var(--clr-neon);
 }
 
 #team{
@@ -82,20 +83,21 @@ p {
     font-weight: 400;
     color: var(--clr-wish);
     text-shadow: 
-    0 0 0.3em rgb(246, 67, 195);
+    0 0 0.3em rgb(246, 67, 195),
+    0 0 0.05em var(--clr-neon);
     
 }
 
 #team::before {
     content: "<";
     color: var(--clr-neon);
-    text-shadow: none;
+    text-shadow: 0 0 0.3em var(--clr-neon);
 }
 
 #team::after {
     content: "/>";
     color: var(--clr-neon);
-    text-shadow: none;
+    text-shadow: 0 0 0.3em var(--clr-neon);
 }
 
 /* cards */
@@ -108,7 +110,7 @@ p {
     margin-bottom: 40px;
     opacity: 0;
     transform: translateY(30px);
-    animation: visible-2 1s ease 0.6s forwards;
+    animation: visible-2 1.5s ease 1.2s forwards;
 }
 @keyframes visible-2 {
     100% {
@@ -224,10 +226,20 @@ p {
 
 .name-roll {
     margin:20% auto;
-    font-weight: 200;
+    font-weight: 100;
     font-size: 20px;
     transition: font-size 400ms;
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 
+     0 0 0.2em rgb(246, 67, 195),
+     0 0 0.05em var(--clr-neon);
 }
+
+.name {
+    letter-spacing: 0.08em;
+}
+
+/* media queries */
 
 @media screen and (max-width: 520px){
     #meet {
