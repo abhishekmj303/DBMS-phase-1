@@ -27,6 +27,9 @@ html,body {
 p {
     margin: 0;
 }
+a {
+    text-decoration: none;
+}
 
 /* background */
 
@@ -204,7 +207,6 @@ p {
 
 .separate-card:hover::after,
 .separate-card:hover::before {
-
     animation: spin 2.5s linear infinite;
 }
 
