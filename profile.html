@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- title -->
+    <title>Profile</title>
+    <!-- css -->
+    <link rel="stylesheet" href="profile.css">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;400;500;600;700;800&family=Poppins&family=Unbounded:wght@200;300;400;500;600;700;800&family=Metropolis&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,700;0,800;0,900;1,300;1,600&family=Ubuntu:ital,wght@0,400;0,500;0,700;1,300&display=swap" rel="stylesheet">
+    <!-- montserrat 300 to 900-->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body id="background">
+    <section id="intro">
+        <div id="self">
+            <p class="starting">Hi,</p>
+            <p class="starting" id="name"> Siddesh</p>
+            <p class="starting" id="dev">Developer</p>
+        </div>
+        <div class="separate-card">
+            <img class="img-scaler" src="images/blank.webp" alt="">
+        </div>
+    </section>
+    <section>
+        <div id="skills">
+            <span class="sphere"></span>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/TagCloud@2.2.0/dist/TagCloud.min.js"></script>
+    <script>
+        const Texts = [
+            'Hello','Hello','Hello','Hello',
+            'Hello','Hello','Hello','Hello',
+            'Hello','Hello','Hello','Hello',
+            'Hello','Hello','Hello','Hello'
+        ];
+        var tagCloud = TagCloud('.sphere',Texts,{
+        radius: 250,
+        maxSpeed: 'normal',
+        initSpeed: 'fast',
+        direction: 35,
+        keep: true,
+        });
+        var color = '#00FFFF';
+        document.querySelector('.sphere').style.color = color;
+    </script>
+</body>
+</html>
