@@ -120,7 +120,10 @@ html,body {
 }
 
 .matter {
-    align-items: start;
+    align-items: center;
+    justify-content: start;
+    display: flex;
+    flex-direction: column;
     color: #FCFCFC;
     width: 40%;
 }
@@ -130,6 +133,7 @@ html,body {
     font-size: 3rem;
     font-weight: 600;
     line-height: 1;
+    margin: 7% 0;
 }
 
 /* sphere */
@@ -218,7 +222,10 @@ html,body {
 
 .separate-card:hover::after,
 .separate-card:hover::before {
-    animation: spin 2.5s linear infinite;
+    /*animation: spin 2.5s linear infinite;*/
+    box-shadow: 0 0 30px var(--tag-color);
+    transition: 0.5s;
+
 }
 
 @keyframes spin {
@@ -244,4 +251,79 @@ html,body {
 
 .container {
   width: 100vw;
+}
+
+/* Download button */
+
+.button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 40px;
+    padding: 1rem 2rem;
+    background: #fff;
+    border-radius: 50px;
+    border-style: solid;
+    border-color: var(--tag-color);
+    cursor: pointer;
+    margin-right: 50px;
+    transition: 0.5s;
+}
+
+.button:hover {
+    fill: var(--tag-color);
+    color: var(--tag-color);
+    background: #12001d;
+    box-shadow: 0 0 15px var(--tag-color);
+    transition: 0.5s;
+}
+
+.cv {
+    /*fill: #12001d;*/
+    width: 15px;
+    height: 15px;
+}
+
+/* social links */
+
+.social {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10%;
+}
+
+ul {
+  margin: 0;
+  padding-left: 0;
+  display: flex;
+  position: relative;
+    align-content: start;
+}
+
+ul li {
+  list-style: none;
+  margin: 0 15px;
+}
+
+ul li a {
+  position: relative;
+  display: flex;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  font-size: 30px;
+  fill: #fff;
+    stroke: var(--tag-color);
+    stroke-width: 10px;
+  transition: .5s;
+}
+
+ul li a:hover {
+  fill: #12001d;
+    -webkit-filter: drop-shadow(0 0 15px var(--tag-color));
+  filter: drop-shadow(0 0 15px var(--tag-color));
+    transition: 0.5s;
 }
