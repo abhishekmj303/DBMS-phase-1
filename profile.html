@@ -11,69 +11,45 @@
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;400;500;600;700;800&family=Poppins&family=Unbounded:wght@200;300;400;500;600;700;800&family=Metropolis&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,700;0,800;0,900;1,300;1,600&family=Ubuntu:ital,wght@0,400;0,500;0,700;1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;400;500;600;700;800&family=Poppins&family=Unbounded:wght@200;300;400;500;600;700;800&family=Metropolis&display=swap"
+          rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,700;0,800;0,900;1,300;1,600&family=Ubuntu:ital,wght@0,400;0,500;0,700;1,300&display=swap"
+          rel="stylesheet">
     <!-- montserrat 300 to 900-->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
 </head>
 <body>
-    <section id="intro">
-        <div id="self">
-            <p class="starting">Hi,</p>
-            <p class="starting" id="name"> Siddesh</p>
-            <p class="starting" id="dev">Developer</p>
-        </div>
-        <div class="separate-card">
-            <img class="img-scaler" src="images/blank.webp" alt="">
-        </div>
-    </section>
-    <section id="about">
-        <div id="skills">
-            <span class="sphere"></span>
-        </div>
-        <div class="matter">
-            <p class="abt-heading">About</p>
-            <p>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</p>
-            <br><br><br><br><br>
-        </div>
-    </section>
+<div class="viewport">
+    <div class="container">
+        <section id="bg">
+            <section id="intro">
+                <div id="self">
+                    <p class="starting">Hi,</p>
+                    <p class="starting" id="name"> Siddesh</p>
+                    <p class="starting" id="dev">Developer</p>
+                </div>
+                <div class="separate-card">
+                    <img class="img-scaler" src="images/blank.webp" alt="">
+                </div>
+            </section>
+            <section id="about">
+                <div id="skills">
+                    <span class="sphere"></span>
+                </div>
+                <div class="matter">
+                    <p class="abt-heading">About Me</p>
+                    <p>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
+                        Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</p>
+                    <br><br><br><br><br>
+                </div>
+            </section>
+        </section>
+    </div>
+</div>
 
-    <script src="https://cdn.jsdelivr.net/npm/TagCloud@2.2.0/dist/TagCloud.min.js"></script>
-    <script>
-        const Texts = [
-            'HTML','CSS','JavaScript','Python',
-            'C/C++','CP','DataScience','AI/ML',
-            'Linux','NumPy','Git','MASM/8086',
-            'Pandas','SQL','Flask','Bash'
-        ];
-        var tagCloud = TagCloud('.sphere',Texts,{
-        radius: 225,
-        maxSpeed: 'normal',
-        initSpeed: 'fast',
-        direction: 35,
-        keep: true,
-        });
-        var color = '#00FFFF';
-        document.querySelector('.sphere').style.color = color;
-        // disable select
-        window.onload = function() {
-            var labels = document.getElementsByTagName('body');
-            for (var i = 0; i < labels.length; i++) {
-                disableSelection(labels[i]);
-            }
-        };
-        function disableSelection(element) {
-            if (typeof element.onselectstart != 'undefined') {
-                element.onselectstart = function() { return false; };
-            } else if (typeof element.style.MozUserSelect != 'undefined') {
-                element.style.MozUserSelect = 'none';
-            } else {
-                element.onmousedown = function() { return false; };
-            }
-        }
-        document.querySelector('.body').scrollIntoView({ 
-            behavior: 'smooth'
-        });
-    </script>
+<script src="https://cdn.jsdelivr.net/npm/TagCloud@2.2.0/dist/TagCloud.min.js"></script>
+<script src="SmoothScroll.js"></script>
+<script src="profile.js"></script>
 </body>
 </html>

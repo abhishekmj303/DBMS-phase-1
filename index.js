@@ -1,5 +1,5 @@
 const cards = document.querySelectorAll('.separate-card');
-const duration = 350;
+const duration = 300;
 var pos = {top: 0, left: 0, width: 0, height: 0};
 
 $("a[href]").click(function (e){
@@ -69,3 +69,8 @@ window.addEventListener( "pageshow", async function ( event ) {
       pos = {top: 0, left: 0, width: 0, height: 0};
   }
 });
+
+// history.go(-1);
+// function test() {
+//         document.URL = document.referrer;
+//     }
