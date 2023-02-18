@@ -16,7 +16,7 @@
     <!-- montserrat 300 to 900-->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
-<body id="background">
+<body>
     <section id="intro">
         <div id="self">
             <p class="starting">Hi,</p>
@@ -27,9 +27,14 @@
             <img class="img-scaler" src="images/blank.webp" alt="">
         </div>
     </section>
-    <section>
+    <section id="about">
         <div id="skills">
             <span class="sphere"></span>
+        </div>
+        <div class="matter">
+            <p class="abt-heading">About</p>
+            <p>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</p>
+            <br><br><br><br><br>
         </div>
     </section>
 
@@ -42,7 +47,7 @@
             'Pandas','SQL','Flask','Bash'
         ];
         var tagCloud = TagCloud('.sphere',Texts,{
-        radius: 250,
+        radius: 225,
         maxSpeed: 'normal',
         initSpeed: 'fast',
         direction: 35,
@@ -50,6 +55,25 @@
         });
         var color = '#00FFFF';
         document.querySelector('.sphere').style.color = color;
+        // disable select
+        window.onload = function() {
+            var labels = document.getElementsByTagName('body');
+            for (var i = 0; i < labels.length; i++) {
+                disableSelection(labels[i]);
+            }
+        };
+        function disableSelection(element) {
+            if (typeof element.onselectstart != 'undefined') {
+                element.onselectstart = function() { return false; };
+            } else if (typeof element.style.MozUserSelect != 'undefined') {
+                element.style.MozUserSelect = 'none';
+            } else {
+                element.onmousedown = function() { return false; };
+            }
+        }
+        document.querySelector('.body').scrollIntoView({ 
+            behavior: 'smooth'
+        });
     </script>
 </body>
 </html>

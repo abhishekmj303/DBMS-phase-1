@@ -24,10 +24,15 @@ html,body {
     background-color: #16181F;
 }
 
-/* #background {
-    margin: 0;
-    padding: 0;
-    color : white;
+/* intro */
+
+#intro {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20%;
+    min-height: 100vh;
     background: radial-gradient(
         farthest-corner at 0% 30%, 
         #000000, 
@@ -36,17 +41,6 @@ html,body {
         #0a0217, 
         #160532, 
         #1a063b);
-} */
-
-/* intro */
-
-#intro {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 150px;
-    min-height: 100vh;
 }
 
 .starting {
@@ -72,7 +66,7 @@ html,body {
     content: ",";
     color: #FCFCFC;
     opacity: 0;
-    animation: appear 1.5s ease 4.5s forwards;
+    animation: appear 1.5s ease 5s forwards;
     text-shadow: none;
     font-size: 5.5rem;
 }
@@ -94,7 +88,7 @@ html,body {
 
 #dev {
     opacity: 0;
-    animation: slide-up 2s ease 4.5s forwards;
+    animation: slide-up 2s ease 5s forwards;
 }
 @keyframes slide-up{
     0% {
@@ -107,10 +101,49 @@ html,body {
     }
 }
 
+/* about */
+
+#about {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+    min-height: 100vh;
+}
+
+.matter {
+    align-items: start;
+    color: #FCFCFC;
+    width: 40%;
+}
+
+.abt-heading {
+    font-family: "Montserrat" , sans-serif;
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 1;
+}
+
 /* sphere */
 
 .tagcloud {
     font-family: 'JetBrains Mono', sans-serif;
+    font-weight: 400;
+    text-shadow: 0 0 10px #00FFFF;
+    transition: transform 1s;
+}
+
+@keyframes atom {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.5);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 /* img-border */
@@ -126,15 +159,15 @@ html,body {
 
 .img-scaler {
     border-radius: 50%;
-    height: 350px;
-    width: 350px;
+    height: 300px;
+    width: 300px;
     transition: all 600ms;
     opacity: 0;
     animation: appear 2s ease 4s forwards;
 }
 .img-scaler:hover {
-    height: 370px;
-    width: 370px;
+    width: 330px;
+    height: 330px;
 }
 
 .separate-card {
