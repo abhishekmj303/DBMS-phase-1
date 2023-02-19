@@ -126,14 +126,30 @@ html,body {
     flex-direction: column;
     color: #FCFCFC;
     width: 40%;
+    text-align: center;
 }
 
-.abt-heading {
+/* .skills-heading {
+    text-align: center;
     font-family: "Montserrat" , sans-serif;
+    color: #FCFCFC;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1;
+    margin-top: 25%;
+} */
+
+.abt-heading {
+    text-align: center;
+    font-family: "Montserrat" , sans-serif;
+    color: #FCFCFC;
     font-size: 3rem;
     font-weight: 600;
     line-height: 1;
     margin: 7% 0;
+}
+.abt {
+    font-family: 'Poppins', sans-serif;
 }
 
 /* sphere */
