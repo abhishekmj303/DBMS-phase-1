@@ -15,6 +15,7 @@ hsl(317 100% 54%)
     --clr-wish: #FCFCFC;
     --card-height-1: 300px;
     --card-height-2: 330px;
+    --img-brdr: #00FFFF;
 }
 
 html,body {
@@ -29,6 +30,11 @@ p {
 }
 a {
     text-decoration: none;
+    color: #FCFCFC;
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 
+     0 0 0.2em rgb(246, 67, 195),
+     0 0 0.05em var(--clr-neon);
 }
 
 /* background */
@@ -123,9 +129,15 @@ a {
 }
 
 .card-image {
-    margin-top: 6%;
-    width: 80%;
-    border-radius: 50%;
+    margin-top: 8%;
+    width: 150px;
+    transition: all 400ms;
+    border: var(--img-brdr) solid 3px;
+    border-radius: 100%;
+}
+.separate-card:hover  .card-image{
+    width: 165px;
+    border: var(--img-brdr) solid 6px;
 }
 
 /* button */
@@ -253,7 +265,7 @@ a {
 /* name and roll no. */
 
 .name-roll {
-    margin:20% auto;
+    margin:10% auto;
     font-weight: 100;
     font-size: 20px;
     transition: font-size 400ms;
@@ -283,10 +295,10 @@ a {
 }
 @media screen and (max-width: 350px){
     #meet {
-        font-size: 0.8em;
+        font-size: 0.7em;
     }
     #team{
-        font-size: 1.75em;
+        font-size: 1.6em;
     }
     .cards-together {
         margin: 0;
