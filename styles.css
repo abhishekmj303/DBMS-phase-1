@@ -132,12 +132,35 @@ a {
     margin-top: 8%;
     width: 150px;
     transition: all 400ms;
-    border: var(--img-brdr) solid 3px;
-    border-radius: 100%;
+    border-radius: 50%;
 }
-.separate-card:hover  .card-image{
+.i1 {
+    border: #95BDFF solid 3px;
+}
+.i2 {
+    border: #EDDBC7 solid 3px;
+}
+.i3 {
+    border: #E5D1FA solid 3px;
+}
+.i4 {
+    border: #B9F3E4 solid 3px;
+}
+.separate-card:hover  .i1{
     width: 165px;
-    border: var(--img-brdr) solid 6px;
+    border: #95BDFF solid 6px;
+}
+.separate-card:hover  .i2{
+    width: 165px;
+    border: #EDDBC7 solid 6px;
+}
+.separate-card:hover  .i3{
+    width: 165px;
+    border: #E5D1FA solid 6px;
+}
+.separate-card:hover  .i4{
+    width: 165px;
+    border: #B9F3E4 solid 6px;
 }
 
 /* button */
@@ -281,7 +304,7 @@ a {
 
 /* media queries */
 
-@media screen and (max-width: 520px){
+@media screen and (max-width: 540px){
     #meet {
         font-size: 1em;
     }
@@ -293,12 +316,12 @@ a {
         padding: 0;
     }
 }
-@media screen and (max-width: 350px){
+@media screen and (max-width: 380px){
     #meet {
         font-size: 0.7em;
     }
     #team{
-        font-size: 1.6em;
+        font-size: 1.7em;
     }
     .cards-together {
         margin: 0;

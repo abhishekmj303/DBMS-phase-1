@@ -22,7 +22,6 @@ html,body {
     padding: 0;
     overflow-x: hidden;
     background-color: #16181F;
-    /*scroll-behavior: smooth;*/
 }
 
 /* background */
@@ -45,7 +44,7 @@ html,body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 20%;
+    gap: 10%;
     min-height: 100vh;
 
 }
@@ -346,4 +345,60 @@ ul li a:hover {
     -webkit-filter: drop-shadow(0 0 15px var(--tag-color));
     filter: drop-shadow(0 0 15px var(--tag-color));
     transition: 0.5s;
+}
+
+@media screen and (max-width: 899px){
+    .matter{
+        width: 80%;
+    }
+    .starting{
+        font-size: 3.5rem;
+    }
+    #name::after, #name::before{
+        font-size: 3.5rem;
+    }
+    .img-scaler{
+        height: 250px;
+        width: 250px;
+    }
+}
+
+@media screen and (max-width: 399px){
+    #intro{
+        flex-direction: column;
+        gap: 50px;
+    }
+    .matter{
+        width: 80%;
+        text-align: justify;
+    }
+    .starting{
+        font-size: 2.5rem;
+        animation: none;
+    }
+    #name::after, #name::before{
+        font-size: 2.5rem;
+    }
+    .img-scaler{
+        height: 200px;
+        width: 200px;
+    }
+    .img-scaler:hover {
+        width: 200px;
+        height: 200px;
+        animation: appear 2s ease 2s forwards;
+    }
+    #dev {
+        opacity: 0;
+        animation: slide-up 1.5s ease 2s forwards;
+    }
+    #name::after {
+        animation: appear 1.5s ease 2s forwards;
+    }
+    .abt-heading{
+        font-size: 2rem;
+    }
+    .button {
+        margin-right: 5px;
+    }
 }
