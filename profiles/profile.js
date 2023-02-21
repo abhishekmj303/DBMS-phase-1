@@ -1,16 +1,30 @@
-const Texts = [
-    'HTML','CSS','JavaScript','Python',
-    'C/C++','CP','DataScience','AI/ML',
-    'Linux','NumPy','Git','MASM/8086',
-    'Pandas','SQL','Flask','Bash'
-];
-var tagCloud = TagCloud('.sphere',Texts,{
-radius: 225,
-maxSpeed: 'normal',
-initSpeed: 'fast',
-direction: 35,
-keep: true,
-});
+const isTouchDevice = 'ontouchstart' in document.documentElement;
+
+var cloudKeep = true;
+if (isTouchDevice) cloudKeep = false;
+var cloudOptions = {
+    radius: 225,
+    maxSpeed: 'normal',
+    initSpeed: 'fast',
+    direction: 35,
+    keep: cloudKeep,
+}
+var tagCloud = TagCloud('.sphere',window.Texts,cloudOptions);
+function cloudRadius() {
+    const width = window.innerWidth;
+    if (width < 400) {
+        cloudOptions.radius = 150;
+    } else if (width < 900) {
+        cloudOptions.radius = 200;
+    } else {
+        cloudOptions.radius = 225;
+    }
+    tagCloud.destroy();
+    tagCloud = TagCloud('.sphere',window.Texts,cloudOptions);
+}
+cloudRadius();
+window.addEventListener("resize", cloudRadius);
+
 var color = '#00FFFF';
 document.querySelector('.sphere').style.color = color;
 // disable select
@@ -33,8 +47,6 @@ function disableSelection(element) {
 // SmoothScroll
 
 'use strict';
-
-const isTouchDevice = 'ontouchstart' in document.documentElement;
 
 disableScroll();
 if (!isTouchDevice) smoothScroll();
