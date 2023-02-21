@@ -1,3 +1,17 @@
+// Back to: index.html
+var homeLink = document.querySelector('#back-link');
+homeLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    const currLink = document.URL;
+    if (currLink.includes(document.referrer) && history.length > 1) {
+        history.go(-1);
+    } else {
+        window.location.href = homeLink.href;
+    }
+});
+
+
+// TagCloud
 const isTouchDevice = 'ontouchstart' in document.documentElement;
 
 var cloudKeep = true;
@@ -44,8 +58,8 @@ function disableSelection(element) {
     }
 }
 
-// SmoothScroll
 
+// SmoothScroll
 'use strict';
 
 disableScroll();

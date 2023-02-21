@@ -13,6 +13,9 @@ rgb(88, 238, 96)
 :root {
     --tag-color : #7700ff;
     --neon-clr : #4b059b;
+    /*For logo-text*/
+    --clr-wish: #FCFCFC;
+    --clr-neon: #6100FF;
 }
 
 html,body {
@@ -36,6 +39,46 @@ html,body {
         #160532,
         #1a063b);
 }
+
+/* Back button */
+
+.back-logo {
+    position: absolute;
+    top: 3%;
+    left: 3%;
+}
+
+#team{
+    font-family: "Unbounded", sans-serif;
+    font-size: 2em;
+    font-weight: 400;
+    color: var(--clr-wish);
+    text-shadow:
+    0 0 0.3em rgb(246, 67, 195),
+    0 0 0.05em var(--clr-neon);
+    margin: 0;
+}
+
+#team::before {
+    content: "<";
+    color: var(--clr-neon);
+    text-shadow: 0 0 0.3em var(--clr-neon);
+}
+
+#team::before::before {
+    content: "<<";
+}
+
+#team::after {
+    content: "/>";
+    color: var(--clr-neon);
+    text-shadow: 0 0 0.3em var(--clr-neon);
+}
+
+#back-link {
+    text-decoration: none;
+}
+
 
 /* intro */
 
@@ -364,6 +407,13 @@ ul li a:hover {
 }
 
 @media screen and (max-width: 399px){
+    #team {
+        font-size: 1em;
+    }
+    .back-logo {
+        top: 10%;
+        left: 7%;
+    }
     #intro{
         flex-direction: column;
         gap: 50px;
