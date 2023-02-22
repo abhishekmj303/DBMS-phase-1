@@ -48,6 +48,12 @@ html,body {
     left: 3%;
 }
 
+#back-arrow {
+    height: 36px;
+    width: 36px;
+    fill: #3c67ec;
+}
+
 #team{
     font-family: "Unbounded", sans-serif;
     font-size: 2em;
@@ -59,24 +65,32 @@ html,body {
     margin: 0;
 }
 
-#team::before {
-    content: "<";
-    color: var(--clr-neon);
-    text-shadow: 0 0 0.3em var(--clr-neon);
-}
+/*#team::before {*/
+/*    content: "<  ";*/
+/*    color: var(--clr-neon);*/
+/*    text-shadow: 0 0 0.3em var(--clr-neon);*/
+/*}*/
 
-#team::before::before {
-    content: "<<";
-}
+/*#team::before::before {*/
+/*    content: "<<";*/
+/*}*/
 
-#team::after {
-    content: "/>";
-    color: var(--clr-neon);
-    text-shadow: 0 0 0.3em var(--clr-neon);
-}
+/*#team::after {*/
+/*    content: "/>";*/
+/*    color: var(--clr-neon);*/
+/*    text-shadow: 0 0 0.3em var(--clr-neon);*/
+/*}*/
 
 #back-link {
     text-decoration: none;
+    font-family: "Unbounded", sans-serif;
+    font-size: 2em;
+    font-weight: 400;
+    color: var(--clr-wish);
+    text-shadow:
+    0 0 0.3em rgb(246, 67, 195),
+    0 0 0.05em var(--clr-neon);
+    margin: 0;
 }
 
 
