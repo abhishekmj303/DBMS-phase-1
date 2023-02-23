@@ -27,6 +27,10 @@ html,body {
     background-color: #16181F;
 }
 
+a, img {
+    pointer-events: auto;
+}
+
 /* background */
 #bg {
     background-attachment: fixed;
@@ -38,6 +42,17 @@ html,body {
         #0a0217,
         #160532,
         #1a063b);
+    /*z-index: 1;*/
+    /*pointer-events: none;*/
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    /*z-index: 1;*/
 }
 
 /* Back button */
@@ -103,7 +118,8 @@ html,body {
     align-items: center;
     gap: 10%;
     min-height: 100vh;
-
+    z-index: 100;
+    pointer-events: none;
 }
 
 .starting {
@@ -114,6 +130,7 @@ html,body {
     line-height: 1;
     animation: slide 4s ease;
     color: #FCFCFC;
+    z-index: 10;
 }
 #name {
     color: var(--tag-color);
@@ -173,6 +190,8 @@ html,body {
     align-items: center;
     gap: 10%;
     min-height: 100vh;
+    z-index: 100;
+    pointer-events: none;
 }
 
 .matter {
@@ -205,7 +224,7 @@ html,body {
     margin: 7% 0;
 }
 .abt {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'JetBrains Mono', sans-serif;
     font-weight: 100;
     font-size: 18px;
 }
