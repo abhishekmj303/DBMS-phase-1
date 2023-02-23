@@ -363,6 +363,7 @@ canvas {
     cursor: pointer;
     margin-right: 50px;
     transition: 0.5s;
+    pointer-events: auto;
 }
 
 .button:hover {
