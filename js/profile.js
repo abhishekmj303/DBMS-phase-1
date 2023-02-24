@@ -21,7 +21,7 @@ var cloudOptions = {
     maxSpeed: 'normal',
     initSpeed: 'fast',
     direction: 35,
-    keep: true,
+    keep: false,
 }
 var tagCloud = TagCloud('.sphere',window.Texts,cloudOptions);
 function cloudRadius() {
