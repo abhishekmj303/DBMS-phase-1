@@ -74,16 +74,16 @@ window.mobileAndTabletCheck = function() {
 
 if (!mobileAndTabletCheck()) {
     smoothScroll();
+
+    window.onresize = () => {
+      resizeBodyHeight();
+    };
+
+    window.onload = () => {
+      enableScroll();
+      resizeBodyHeight();
+    };
 }
-
-window.onresize = () => {
-  resizeBodyHeight();
-};
-
-window.onload = () => {
-  enableScroll();
-  resizeBodyHeight();
-};
 
 // Functions
 
