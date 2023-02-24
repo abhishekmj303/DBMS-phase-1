@@ -28,7 +28,7 @@ if (!isTouch) {
     BLOOM_SOFT_KNEE: 0.4,
     SUNRAYS: true,
     SUNRAYS_RESOLUTION: 196,
-    SUNRAYS_WEIGHT: 0.2,
+    SUNRAYS_WEIGHT: 0.3,
   })
 } else {
   const parent = document.querySelector('#bg');

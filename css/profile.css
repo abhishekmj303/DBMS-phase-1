@@ -133,18 +133,15 @@ canvas {
     font-size: 5.5rem;
     font-weight: 700;
     line-height: 1;
-    animation: slide 4s ease;
+    animation: slide 4s ease forwards;
     color: #FCFCFC;
-    z-index: 10;
 }
 #name {
     color: var(--tag-color);
-    text-shadow: var(--neon-clr) 5px 5px 2px;
 }
 #name::before {
     content: "I'm";
     color: #FCFCFC;
-    text-shadow: none;
     font-size: 5.5rem;
 }
 #name::after {
@@ -152,7 +149,6 @@ canvas {
     color: #FCFCFC;
     opacity: 0;
     animation: appear 1.5s ease 5s forwards;
-    text-shadow: none;
     font-size: 5.5rem;
 }
 @keyframes slide {
@@ -165,9 +161,21 @@ canvas {
     }
     50% {
         transform: translateX(50%);
+        text-shadow: none;
+    }
+    80% {
+        text-shadow: none;
     }
     100% {
         transform: translateX(0%);
+        text-shadow: var(--neon-clr) 5px 5px 2px;
+    }
+}
+@keyframes shadow {
+    0% {
+        text-shadow: none;
+    }
+    100% {
     }
 }
 
@@ -183,6 +191,7 @@ canvas {
     100% {
         opacity: 1;
         transform: translateY(0%);
+        text-shadow: var(--neon-clr) 5px 5px 2px;
     }
 }
 
@@ -469,6 +478,9 @@ ul li a:hover {
         font-size: 2.5rem;
         animation: none;
     }
+    #name{
+        text-shadow: var(--neon-clr) 2.5px 2.5px 2px;
+    }
     #name::after, #name::before{
         font-size: 2.5rem;
     }
@@ -484,6 +496,7 @@ ul li a:hover {
     #dev {
         opacity: 0;
         animation: slide-up 1.5s ease 2s forwards;
+        text-shadow: var(--neon-clr) 5px 5px 2px;
     }
     #name::after {
         animation: appear 1.5s ease 2s forwards;
