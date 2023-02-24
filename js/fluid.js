@@ -28,8 +28,9 @@ if (!isTouch) {
     BLOOM_SOFT_KNEE: 0.4,
     SUNRAYS: true,
     SUNRAYS_RESOLUTION: 196,
-    SUNRAYS_WEIGHT: 0.4,
+    SUNRAYS_WEIGHT: 0.2,
   })
 } else {
-  document.removeChild(document.querySelector('canvas'));
+  const parent = document.querySelector('#bg');
+  parent.removeChild(parent.querySelector('canvas'));
 }

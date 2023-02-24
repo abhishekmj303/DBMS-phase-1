@@ -16,6 +16,11 @@ rgb(88, 238, 96)
     /*For logo-text*/
     --clr-wish: #FCFCFC;
     --clr-neon: #6100FF;
+    /*For typeShuffle*/
+    --color-text: #fff;
+	--color-bg: #000;
+	--color-link: #61dca3;
+	--color-link-hover: #fff;
 }
 
 html,body {
@@ -441,8 +446,12 @@ ul li a:hover {
 }
 
 @media screen and (max-width: 399px){
-    #team {
-        font-size: 1em;
+    #back-link {
+        font-size: 1.2em;
+    }
+    #back-arrow {
+        width: 20px;
+        height: 20px;
     }
     .back-logo {
         top: 10%;

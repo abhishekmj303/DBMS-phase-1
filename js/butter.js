@@ -121,5 +121,5 @@ var options = {
     wrapperId: 'butter',
     wrapperDamper: 0.07,
     cancelOnTouch: true
-  };
+};
 butter.init(options);
