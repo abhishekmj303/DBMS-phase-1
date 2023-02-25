@@ -41,10 +41,11 @@ const cloudElement = document.querySelector('.sphere');
 cloudAnimate();
 window.addEventListener('scroll', cloudAnimate);
 
-function cloudAnimate() {
+async function cloudAnimate() {
     const boxTop = cloudElement.getBoundingClientRect().top;
 
     if ( boxTop < window.innerHeight && !alreadyTriggered ) {
+        await new Promise(r => setTimeout(r, 2300));
         expandCloudAnimate('.sphere',window.Texts,cloudOptions);
         alreadyTriggered = true;
     }
