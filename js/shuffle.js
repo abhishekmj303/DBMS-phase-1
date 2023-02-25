@@ -399,6 +399,7 @@ export class TypeShuffle {
 
 const textElement = document.querySelector('.abt');
 const ts = new TypeShuffle(textElement);
+ts.clearCells();
 var triggerType = 'fx3';
 var alreadyTriggered = false;
 
@@ -413,13 +414,15 @@ if ( personName.textContent === ' Abhishek' ) {
 } else if ( personName.textContent === ' Kartheek' ) {
     triggerType = 'fx4';
 }
+ts.trigger(triggerType);
 
-window.addEventListener('scroll', () => {
+shuffleAnimate();
+window.addEventListener('scroll', shuffleAnimate);
+function shuffleAnimate() {
     const boxTop = textElement.getBoundingClientRect().top;
-    const boxBottom = textElement.getBoundingClientRect().bottom;
 
-    if ( boxTop > window.innerHeight && boxBottom > 0  && !alreadyTriggered ) {
+    if ( boxTop < window.innerHeight && !alreadyTriggered ) {
         ts.trigger(triggerType);
         alreadyTriggered = true;
     }
-});
+}
