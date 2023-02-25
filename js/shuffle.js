@@ -418,10 +418,14 @@ ts.trigger(triggerType);
 
 shuffleAnimate();
 window.addEventListener('scroll', shuffleAnimate);
-function shuffleAnimate() {
-    const boxTop = textElement.getBoundingClientRect().top;
+async function shuffleAnimate() {
+    const appearElement = document.querySelector('.abt-heading');
+    await new Promise(r => setTimeout(r, 200));
+    const boxTop = appearElement.getBoundingClientRect().top;
+    // console.log("no", boxTop, window.innerHeight);
 
     if ( boxTop < window.innerHeight && !alreadyTriggered ) {
+        // console.log("yes", boxTop, window.innerHeight)
         ts.trigger(triggerType);
         alreadyTriggered = true;
     }
