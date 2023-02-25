@@ -38,16 +38,16 @@ var tagCloudBackground = TagCloud('.sphere-back',[],cloudOptions);
 var alreadyTriggered = false;
 const cloudElement = document.querySelector('.sphere');
 
-cloudAnimate();
+// cloudAnimate();
 window.addEventListener('scroll', cloudAnimate);
 
 async function cloudAnimate() {
     const boxTop = cloudElement.getBoundingClientRect().top;
 
     if ( boxTop < window.innerHeight && !alreadyTriggered ) {
+        alreadyTriggered = true;
         await new Promise(r => setTimeout(r, 2300));
         expandCloudAnimate('.sphere',window.Texts,cloudOptions);
-        alreadyTriggered = true;
     }
 }
 
