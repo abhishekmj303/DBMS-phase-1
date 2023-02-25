@@ -29,7 +29,51 @@ var cloudOptions = {
     direction: 35,
     keep: cloudKeep,
 }
-var tagCloud = TagCloud('.sphere',window.Texts,cloudOptions);
+
+cloudRadius();
+window.addEventListener("resize", cloudRadius);
+
+var tagCloud = TagCloud('.sphere',[],cloudOptions);
+var tagCloudBackground = TagCloud('.sphere-back',[],cloudOptions);
+var alreadyTriggered = false;
+const cloudElement = document.querySelector('.sphere');
+
+cloudAnimate();
+window.addEventListener('scroll', cloudAnimate);
+
+function cloudAnimate() {
+    const boxTop = cloudElement.getBoundingClientRect().top;
+
+    if ( boxTop < window.innerHeight && !alreadyTriggered ) {
+        expandCloudAnimate('.sphere',window.Texts,cloudOptions);
+        alreadyTriggered = true;
+    }
+}
+
+async function expandCloudAnimate(cloudClass, texts, options) {
+    let timeout = 700, newTexts;
+    const rad = options.radius;
+    for (let i = 0; i < texts.length; i++) {
+        newTexts = texts.slice(0, i + 1);
+        options.radius = rad / texts.length * (i+1);
+        tagCloud.destroy();
+        tagCloud = TagCloud(cloudClass, newTexts, options);
+        await new Promise(r => setTimeout(r, timeout));
+        if (i < 3*texts.length/5) {
+            timeout = timeout * 0.7;
+        } else {
+            timeout = timeout * 1.6;
+        }
+    }
+    for (let i = 0; i < 1; i++) {
+        newTexts = shuffle(texts);
+        tagCloud.destroy();
+        tagCloud = TagCloud(cloudClass, newTexts, options);
+        await new Promise(r => setTimeout(r, timeout));
+        timeout = timeout * 1.1;
+    }
+}
+
 function cloudRadius() {
     const width = window.innerWidth;
     if (width < 400) {
@@ -39,18 +83,32 @@ function cloudRadius() {
     } else {
         cloudOptions.radius = 225;
     }
-    tagCloud.destroy();
-    tagCloud = TagCloud('.sphere',window.Texts,cloudOptions);
 }
-cloudRadius();
-window.addEventListener("resize", cloudRadius);
+
+function shuffle(array) {
+  let currentIndex = array.length,  randomIndex;
+
+  // While there remain elements to shuffle.
+  while (currentIndex !== 0) {
+
+    // Pick a remaining element.
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+
+  return array;
+}
 
 var color = '#00FFFF';
 document.querySelector('.sphere').style.color = color;
 // disable select
 window.onload = function() {
-    var labels = document.getElementsByTagName('body');
-    for (var i = 0; i < labels.length; i++) {
+    const labels = document.getElementsByTagName('body');
+    for (let i = 0; i < labels.length; i++) {
         disableSelection(labels[i]);
     }
 };

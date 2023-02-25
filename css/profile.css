@@ -252,6 +252,17 @@ canvas {
     transition: transform 1s;
 }
 
+#skills {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sphere {
+    position: absolute;
+    z-index: 1;
+}
+
 @keyframes atom {
     0% {
         transform: scale(1);
